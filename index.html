@@ -16,6 +16,8 @@
     <!-- Custom styles for this template -->
     <link href="css/portfolio-item.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 
   </head>
@@ -26,13 +28,23 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Crystals Collector!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
           </ul>
         </div>
+
+        <div class="alert alert-danger" id="loseAlert"role="alert">
+          Shame on you! You lose... better luck next time!
+          <br>Press any key to play another round.
+        </div>
+
+        <div class="alert alert-success" id="winAlert" role="alert">
+          Congratulations! You win this round :D
+          <br>Press any key to play another round.
+        </div>
+        
+
+
       </div>
     </nav>
 
@@ -61,15 +73,15 @@
 
       </div>
       <br><br>
-      <div class="row">
+      <div class="row" id="scoreRow">
 
         <div class="col-md-6">
-          <h3>Reach the following number: <br><div id="randomNum"></div></h3>
-          <br>
-          <h3>Your current score: <br><div id="currentScore">0</div></h3>
 
+          <div class="row"><h3>Reach the following number: <div id="randomNum">0</div></h3></div>
+          <div class="row"><h3>Your current score: <div id="currentScore">0</div></h3></div>
+         
         </div>
-
+        
         <div class="col-md-6">
 
           <div class="row"><h3>Wins: <div id="wins">0</div></h3></div>
