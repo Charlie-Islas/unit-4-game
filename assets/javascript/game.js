@@ -10,21 +10,56 @@ window.onload=function(){
     var diamondVal=0;
     var randomNum=0;
     var userScore=0;
+    var proceed=false;
 
     function genValues(){
 
-        randomNum=Math.floor(Math.random() * 31) + 50;
-        rubyVal=Math.floor(Math.random() * 2) + 5;
-        saphireVal=Math.floor(Math.random() * 8) + 5;
-        yellowDVal=Math.floor(Math.random() * 14) + 5;
-        diamondVal=Math.floor(Math.random() * 19) + 5;
-        console.log("random number: "+randomNum);
-        console.log("saphireVal "+rubyVal);
-        console.log("yellow diamond:  "+yellowDVal);
-        console.log("diamond val "+diamondVal);
+        randomNum=Math.floor(Math.random() * 101) + 19;
+        $("#randomNum").html(randomNum);
 
+        rubyVal=Math.floor(Math.random()*11) + 1;
+        saphireVal=Math.floor(Math.random() * 11) + 1;
+        yellowDVal=Math.floor(Math.random() * 11) + 1;
+        diamondVal=Math.floor(Math.random() * 11) + 1;
+        checkValues();
 
+    }
 
+    //function to validate that all the crystals have a different value
+    function checkValues(){
+
+        if(rubyVal!==saphireVal&&rubyVal!==yellowDVal&&rubyVal!==diamondVal&&saphireVal!==yellowDVal&&saphireVal!==diamondVal&&yellowDVal!==diamondVal){
+            clickCrystals();
+        }
+        else{genValues();}
+
+    }
+
+    function clickCrystals(){
+
+        if(!gameOver){
+
+            $("#ruby").on("click", function(){
+                userScore+=rubyVal;
+                $("#currentScore").html(userScore);
+            });
+
+            $("#saphire").on("click", function(){
+                userScore+=saphireVal;
+                $("#currentScore").html(userScore);
+            });
+
+            $("#yellowDiamond").on("click", function(){
+                userScore+=yellowDVal;
+                $("#currentScore").html(userScore);
+            });
+
+            $("#diamond").on("click", function(){
+                userScore+=diamondVal;
+                $("#currentScore").html(userScore);
+            });
+
+        }
     }
 
     genValues();
