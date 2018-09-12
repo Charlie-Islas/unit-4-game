@@ -104,7 +104,7 @@ window.onload=function(){
             document.onkeyup = function (event) {
 
                 $("#winAlert").hide();
-                if(userScore!=0){
+                if(userScore!=0&&userScore>=randomNum){
                 genValues();}
         
                 
@@ -128,7 +128,7 @@ window.onload=function(){
 
             
                     $("#loseAlert").hide();
-                    if(userScore!=0){
+                    if(userScore!=0&&userScore>=randomNum){
                     genValues();}
                     
                     
